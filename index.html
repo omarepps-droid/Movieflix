@@ -11,16 +11,16 @@
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-brand">
+            <div class="nav-brand" onclick="window.location.reload()">
                 <i class="fas fa-film"></i>
                 <h1>MovieFlix</h1>
             </div>
             
-            <div class="nav-links">
+            <div class="nav-links" id="navLinks">
                 <a href="#" class="active" data-category="home">Home</a>
                 <a href="#" data-category="movies">Movies</a>
                 <a href="#" data-category="trending">Trending</a>
-                <a href="#" data-category="new">New Releases</a>
+                <a href="#" data-category="upcoming">New Releases</a>
             </div>
             
             <div class="nav-search">
@@ -28,13 +28,22 @@
                 <button id="searchBtn"><i class="fas fa-search"></i></button>
             </div>
             
-            <div class="nav-menu-btn">
+            <div class="nav-menu-btn" id="menuBtn">
                 <i class="fas fa-bars"></i>
             </div>
         </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#" class="active" data-category="home">Home</a>
+            <a href="#" data-category="movies">Movies</a>
+            <a href="#" data-category="trending">Trending</a>
+            <a href="#" data-category="upcoming">New Releases</a>
+            <a href="#" data-category="genres">Genres</a>
+        </div>
     </nav>
 
-    <!-- Hero Section (Dynamic) -->
+    <!-- Hero Section -->
     <section class="hero" id="hero">
         <div class="hero-content">
             <span class="hero-badge">FEATURED</span>
@@ -55,12 +64,12 @@
     <!-- Main Content -->
     <main class="main-content">
         <!-- Categories Filter -->
-        <div class="categories-filter">
+        <div class="categories-filter" id="categoriesFilter">
             <button class="filter-btn active" data-filter="popular">Popular</button>
             <button class="filter-btn" data-filter="now_playing">Now Playing</button>
             <button class="filter-btn" data-filter="top_rated">Top Rated</button>
             <button class="filter-btn" data-filter="upcoming">Upcoming</button>
-            <button class="filter-btn" data-filter="trending/week">Trending</button>
+            <button class="filter-btn" data-filter="trending">Trending</button>
         </div>
 
         <!-- Movies Grid Section -->
@@ -86,13 +95,13 @@
         </section>
 
         <!-- Continue Watching Section -->
-        <section class="continue-watching" id="continueWatching" style="display: none;">
+        <section class="continue-watching" id="continueWatchingSection" style="display: none;">
             <h2 class="section-title">Continue Watching</h2>
             <div class="movies-row" id="continueWatchingGrid"></div>
         </section>
 
         <!-- Genres Section -->
-        <section class="genres-section">
+        <section class="genres-section" id="genresSection">
             <h2 class="section-title">Browse by Genre</h2>
             <div class="genres-grid" id="genresGrid">
                 <!-- Genres will be loaded here -->
@@ -127,7 +136,7 @@
                         <option value="embed">Server 4 (Embed.su)</option>
                         <option value="moviesapi">Server 5 (MoviesAPI)</option>
                         <option value="2embed">Server 6 (2Embed)</option>
-                        <option value="auto">Auto (Best Server)</option>
+                        <option value="auto" selected>Auto (Best Server)</option>
                     </select>
                 </div>
             </div>
@@ -144,18 +153,16 @@
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Movies</a></li>
-                    <li><a href="#">TV Shows</a></li>
-                    <li><a href="#">My List</a></li>
+                    <li><a href="#" onclick="window.location.reload()">Home</a></li>
+                    <li><a href="#" data-category="movies">Movies</a></li>
+                    <li><a href="#" data-category="trending">Trending</a></li>
+                    <li><a href="#" data-category="upcoming">New Releases</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>Legal</h3>
-                <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">DMCA</a></li>
+                <h3>Genres</h3>
+                <ul id="footerGenres">
+                    <!-- Genres will be loaded here -->
                 </ul>
             </div>
         </div>
@@ -166,4 +173,4 @@
 
     <script src="script.js"></script>
 </body>
-</html>
+    </html>
